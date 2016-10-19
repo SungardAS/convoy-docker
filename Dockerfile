@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y libaio1 && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+  && apt-get install -y libaio1 ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
 
 ENV CONVOY_VERSION v0.5.0
 ADD https://github.com/rancher/convoy/releases/download/${CONVOY_VERSION}/convoy.tar.gz /tmp/
