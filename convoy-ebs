@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "unix:///var/run/convoy/convoy-ebs.sock" > /etc/docker/plugins/convoy-ebs.spec
+
+convoy -s /host/var/run/convoy/convoy-ebs.sock \
+  daemon \
+  --mnt-ns /host/proc/$$(ps --no-header --pid $$$$ -o ppid)/ns/mnt \
+  --drivers ebs \
+  $@
