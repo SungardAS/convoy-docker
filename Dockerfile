@@ -10,6 +10,6 @@ RUN tar xvf /tmp/convoy.tar.gz -C /tmp/ \
   && cp /tmp/convoy/convoy* /usr/local/bin/ \
   && rm /tmp/convoy.tar.gz
 
-ADD convoy-start /usr/local/bin/
-RUN chmod a+x /usr/local/bin/convoy-start
+ADD convoy-ebs /usr/local/bin/
+RUN chmod a+x /usr/local/bin/convoy-ebs
 
