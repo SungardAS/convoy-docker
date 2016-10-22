@@ -6,6 +6,6 @@ echo "Will enter namesapce for $(ps --no-header --pid $$ -o ppid)"
 
 convoy -s /host/var/run/convoy/convoy-ebs.sock \
   daemon \
-  --mnt-ns /host/proc/$(cat /host/run/docker.pid)/ns/mnt \
+  --mnt-ns /host/proc/1/ns/mnt \
   --drivers ebs \
   $@
