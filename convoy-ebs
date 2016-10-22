@@ -10,6 +10,6 @@ NS_PID=${NS_PID:-$DOCKER_PID}
 
 convoy -s /host/var/run/convoy/convoy-ebs.sock \
   daemon \
-  --mnt-ns /host/proc/$NS_PID/ns/mnt \
+  --mnt-ns $PROC_PATH/$NS_PID/ns/mnt \
   --drivers ebs \
   $@
